@@ -1,6 +1,7 @@
 package entities;
 
-import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Client {
 	
@@ -37,4 +38,17 @@ public class Client {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+	
+	public String toString() {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(name);
+		sb.append(" " + sdf.format(birthDate));
+		sb.append(" - " + email);
+		
+		return sb.toString();
+	}
+	
 }
